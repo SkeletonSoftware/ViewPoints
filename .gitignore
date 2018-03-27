@@ -1,0 +1,28 @@
+# Visual Studio (>=2015) project-specific, machine local files
+.vs/
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+*.userprefs
+*.bak
+
+# ignore Xamarin.Android Resource.Designer.cs files
+*[Rr]esource.[Dd]esigner.cs
+
+# Xamarin Components
+Components/
+Packages/
+*lock.json
+*.targets
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+x64/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
