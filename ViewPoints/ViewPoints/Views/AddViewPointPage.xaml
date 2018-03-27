@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViewPoints.Views.AddViewPointPage"
+             xmlns:viewModels="clr-namespace:ViewPoints.ViewModels" 
+             Title="Zadání rozhledny"
+             BindingContext="{viewModels:AddViewPointViewModel}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Přidat" Command="{Binding SaveCommand}"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout Margin="16">
+        <Label Text="Název" />
+        <Entry Text="{Binding Title}"/>
+        <Label Text="Výška rozhledny" />
+        <Entry Text="{Binding TowerHeight}"/>
+        <Label Text="Poloha" />
+        <Entry Text="{Binding Location}"/>
+        <Label Text="Nadmořská výška" />
+        <Entry Text="{Binding Altitude}"/>
+        <Label Text="Otvírací doba" />
+        <Entry Text="{Binding OpeningHours}"/>
+        <Label Text="Popis" />
+        <Entry Text="{Binding Description}"/>
+    </StackLayout>
+</ContentPage>
