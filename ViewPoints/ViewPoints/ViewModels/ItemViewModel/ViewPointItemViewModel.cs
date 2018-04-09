@@ -14,6 +14,8 @@ namespace ViewPoints.ViewModels.ItemViewModel
             this.model = viewPoint;
         }
 
+        public byte[] Picture { get; set; }
+
         public string Title
         {
             get
