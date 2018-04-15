@@ -38,5 +38,12 @@ namespace ViewPoints.DependencyServices
         /// <param name="fileName"></param>
         /// <returns></returns>
         Task Delete(string fileName);
+
+        /// <summary>
+        /// Ziska absolutni cestu k souboru
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        string GetAbsolutePath(string fileName);
     }
 }

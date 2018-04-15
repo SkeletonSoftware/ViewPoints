@@ -60,7 +60,7 @@ namespace ViewPoints.Droid.DependencyServices
             }
         }
 
-        private string GetAbsolutePath(string fileName)
+        public string GetAbsolutePath(string fileName)
         {
             return Path.Combine(Android.App.Application.Context.FilesDir.AbsolutePath, fileName);
         }
