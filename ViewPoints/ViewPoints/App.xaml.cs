@@ -1,7 +1,10 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using ViewPoints.Backend.DataAccess.Database;
+using ViewPoints.DependencyServices;
 using ViewPoints.Views;
 using Xamarin.Forms;
 
@@ -13,6 +16,7 @@ namespace ViewPoints
 		{
 			InitializeComponent();
 			MainPage = new NavigationPage(new ViewPointListPage());
+            DatabaseConfig.Database = new SQLiteAsyncConnection(DependencyService.Get<IInternalFileManager>().GetAbsolutePath(DatabaseConfig.DatabaseName));
 		}
 
 		protected override void OnStart ()
