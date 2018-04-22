@@ -10,6 +10,6 @@ namespace ViewPoints.Backend.Models
 
         public float Longitude { get; set; }
 
-        public float Altitude { get; set; }
+        public float? Altitude { get; set; }
     }
 }

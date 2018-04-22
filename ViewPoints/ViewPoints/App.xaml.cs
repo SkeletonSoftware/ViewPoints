@@ -15,7 +15,7 @@ namespace ViewPoints
 		public App ()
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage(new ViewPointListPage());
+			MainPage = new NavigationPage(new LoginPage());
             DatabaseConfig.Database = new SQLiteAsyncConnection(DependencyService.Get<IInternalFileManager>().GetAbsolutePath(DatabaseConfig.DatabaseName));
 		}
 

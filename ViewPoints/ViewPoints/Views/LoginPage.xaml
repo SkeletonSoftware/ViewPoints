@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ViewPoints.Views.LoginPage"
+             xmlns:viewModels="clr-namespace:ViewPoints.ViewModels" 
+             BindingContext="{viewModels:LoginViewModel}">
+    <StackLayout Margin="16" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+        <Label FontSize="Medium" Text="Zadejte přezdívku" />
+        <Entry Text="{Binding Nickname}" >
+            <Entry.Margin>
+                <Thickness Left="16" Right="16" Top="0" Bottom="0" />
+            </Entry.Margin>
+        </Entry>
+        <Button Margin="16" Text="Odeslat" Command="{Binding SendCommand}"/>
+    </StackLayout>
+</ContentPage>

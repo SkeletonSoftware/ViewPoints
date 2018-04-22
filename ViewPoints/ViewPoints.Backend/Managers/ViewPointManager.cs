@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using ViewPoints.Backend.DataAccess.WebRepository;
 using ViewPoints.Backend.Models;
 
 namespace ViewPoints.Backend.Managers
@@ -25,7 +26,9 @@ namespace ViewPoints.Backend.Managers
 
         public async Task<List<ViewPoint>> GetViewPoints()
         {
-            return viewPoints;
+            var id = UserManager.CurrentUser.Id;
+            var webRepository = new ViewPointsWebRepository();
+            return await webRepository.GetViewPoints(id);
         }
     }
 }
