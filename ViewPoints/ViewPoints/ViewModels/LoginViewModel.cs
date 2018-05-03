@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using ViewPoints.Backend.Managers;
+using ViewPoints.DependencyServices;
 using ViewPoints.ViewModels.Abstract;
 using ViewPoints.Views;
 using Xamarin.Forms;
