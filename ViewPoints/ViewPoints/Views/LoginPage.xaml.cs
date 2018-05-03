@@ -16,12 +16,5 @@ namespace ViewPoints.Views
 		{
 			InitializeComponent ();
 		}
-
-        protected async override void OnAppearing()
-        {
-            base.OnAppearing();
-            var location = DependencyService.Get<ILocationManager>();
-            var loc = await location.GetLocation();
-        }
     }
 }

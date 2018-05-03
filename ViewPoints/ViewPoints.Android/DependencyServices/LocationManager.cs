@@ -21,13 +21,21 @@ using Xamarin.Forms;
 [assembly: Dependency(typeof(ViewPoints.Droid.DependencyServices.LocationManager))]
 namespace ViewPoints.Droid.DependencyServices
 {
+    /// <summary>
+    /// Třída pro práci s polohou na Androidu
+    /// </summary>
     public class LocationManager : ILocationManager
     {
+        /// <summary>
+        /// Metoda která vrátí aktální polohu zařízení, pomocí fused location
+        /// </summary>
+        /// <returns></returns>
         public async Task<Position> GetLocation()
         {
             //Vytvoření listeneru
             var locationListener = new FusedTaskListener();
             var locationSource = new TaskCompletionSource<Position>();
+            await locationSource.Task;
             locationListener.SetSource(locationSource);
 
             Position output = null;
@@ -48,17 +56,13 @@ namespace ViewPoints.Droid.DependencyServices
             //Zahájení komunikace s API
             locationListener.Connected += handler;
             apiClient.Connect();
+
+            //Čekání na získání polohy
             output = await locationSource.Task;
-            locationListener.Connected -= handler; //Pokud ještě nedošlo k navázání spojení
-                                                   //If by měl zaručit že aplikace na všech zařízeních skutečně počká než se await dokončí.
-            if (output != null)
-            {
-                await this.StopFusedLocation(apiClient, locationListener);
-            }
-            else
-            {
-                await this.StopFusedLocation(apiClient, locationListener);
-            }
+
+            //Ukončení komunikace s klientem 
+            locationListener.Connected -= handler; 
+            await this.StopFusedLocation(apiClient, locationListener);
             apiClient.Dispose();
             apiClient = null;
             return output;
