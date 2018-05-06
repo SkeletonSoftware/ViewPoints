@@ -10,6 +10,11 @@ namespace ViewPoints.ViewModels
 {
     class ViewPointListViewModel : ViewModel
     {
+        /// <summary>
+        /// Udalost ktera se vyvola po prenacteni seznamu rozhleden
+        /// </summary>
+        public event EventHandler ViewPointsReloaded;
+
         private List<ViewPointItemViewModel> viewPoints;
 
         public async Task LoadData()
@@ -23,6 +28,7 @@ namespace ViewPoints.ViewModels
                 list.Add(new ViewPointItemViewModel(viewPoint));
             }
             this.ViewPoints = list;
+            ViewPointsReloaded?.Invoke(this, null);
         }
 
         public List<ViewPointItemViewModel> ViewPoints

@@ -47,5 +47,21 @@ namespace ViewPoints.ViewModels.ItemViewModel
                 }
             }
         }
+
+        public Position Location
+        {
+            get
+            {
+                return this.model.Location;
+            }
+            set
+            {
+                if (this.model.Location != value)
+                {
+                    this.model.Location = value;
+                    this.OnPropertyChanged(nameof(this.Location));
+                }
+            }
+        }
     }
 }
