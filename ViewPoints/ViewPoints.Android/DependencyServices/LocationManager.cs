@@ -35,7 +35,6 @@ namespace ViewPoints.Droid.DependencyServices
             //Vytvoření listeneru
             var locationListener = new FusedTaskListener();
             var locationSource = new TaskCompletionSource<Position>();
-            await locationSource.Task;
             locationListener.SetSource(locationSource);
 
             Position output = null;
