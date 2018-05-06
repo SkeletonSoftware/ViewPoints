@@ -72,6 +72,7 @@
     <Compile Include="DependencyServices\PicturePicker.cs" />
     <Compile Include="Location\FusedTaskListener.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Renderers\MapRenderer.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

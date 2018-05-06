@@ -26,13 +26,15 @@ namespace ViewPoints.Views
 
         private void ViewModel_ViewPointsReloaded(object sender, EventArgs e)
         {
-            map.Pins.Clear(); //Smazeme dosavadni piny
+            map.CustomPins.Clear(); //Smazeme dosavadni piny
             foreach (var item in viewModel.ViewPoints) //pridame vsechny piny v kolekci
             {
-                map.Pins.Add(new Pin()
+                map.CustomPins.Add(new Controls.Models.CustomPin()
                 {
-                    Position = new Xamarin.Forms.Maps.Position(item.Location.Latitude, item.Location.Longitude),
-                    Label = item.Title
+                    Location = item.Location,
+                    Title = item.Title,
+                    Description = item.Subtitle,
+                    Color = Color.Blue
                 });
             }
 

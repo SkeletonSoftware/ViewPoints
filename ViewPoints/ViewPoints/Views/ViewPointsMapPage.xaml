@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             xmlns:controls="clr-namespace:ViewPoints.Controls"
              x:Class="ViewPoints.Views.ViewPointsMapPage"
              Title="Mapa rozhleden">
     <StackLayout VerticalOptions="FillAndExpand">
-        <maps:Map x:Name="map"/>
+        <controls:Map x:Name="map"/>
     </StackLayout>
 </ContentPage>
