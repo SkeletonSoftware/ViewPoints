@@ -26,6 +26,11 @@ namespace ViewPoints.Views
             this.Navigation.PushAsync(new AddViewPointPage());
         }
 
+        private void Map_Clicked(object sender, EventArgs e)
+        {
+            this.Navigation.PushAsync(new ViewPointsMapPage());
+        }
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();

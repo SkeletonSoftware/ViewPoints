@@ -4,6 +4,7 @@
              x:Class="ViewPoints.Views.ViewPointListPage"
              Title="Rozhledny">
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Mapa" Clicked="Map_Clicked"/>
         <ToolbarItem Text="Přidat" Clicked="Add_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
